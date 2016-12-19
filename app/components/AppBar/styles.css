@@ -7,3 +7,27 @@
   display: flex;
   justify-content: space-between;
 }
+
+.iconButton {
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.icon {
+  font-size: 20px;
+  color: #fff;
+}
+
+.icon:hover {
+  color: #E5E5E5;
+}
+
+.linkContainer {
+  font-size: 16px;
+}
+
+.heading {
+  text-align: left;
+  display: flex;
+  flex-grow: 2;
+}
