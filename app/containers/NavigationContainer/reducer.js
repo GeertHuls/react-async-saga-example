@@ -12,6 +12,7 @@ import {
 
 const initialState = fromJS({
   topics: [],
+  isDrawerOpen: false,
 });
 
 function navigationContainerReducer(state = initialState, action) {

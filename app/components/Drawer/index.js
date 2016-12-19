@@ -38,7 +38,7 @@ Drawer.propTypes = {
   selectItem: React.PropTypes.func.isRequired,
   itemLabelAttr: React.PropTypes.string.isRequired,
   itemKeyAttr: React.PropTypes.string.isRequired,
-  isDrawerOpen: React.PropTypes.boolean.isRequired,
+  isDrawerOpen: React.PropTypes.bool.isRequired,
 };
 
 export default Drawer;
