@@ -8,8 +8,9 @@ import React from 'react';
 
 
 import styles from './styles.css';
+import classNames from 'classnames';
 
-function Drawer({ items, selectItem, itemLabelAttr, itemKeyAttr }) {
+function Drawer({ items, selectItem, itemLabelAttr, itemKeyAttr, isDrawerOpen }) {
   const itemNodes = items.map(item => (
     <div
       className={styles.item}
@@ -20,8 +21,13 @@ function Drawer({ items, selectItem, itemLabelAttr, itemKeyAttr }) {
     </div>
   ));
 
+  // [styles.drawerOpen] = es6 feature called computed attributes
+  // if isDrawerOpen is truety, then the drawerOpen style is used
+  // otherwise the drawer style is used.
   return (
-    <div className={styles.drawer}>
+    <div
+      className={classNames(styles.drawer, { [styles.drawerOpen]: isDrawerOpen })}
+    >
       {itemNodes}
     </div>
   );
@@ -32,6 +38,7 @@ Drawer.propTypes = {
   selectItem: React.PropTypes.func.isRequired,
   itemLabelAttr: React.PropTypes.string.isRequired,
   itemKeyAttr: React.PropTypes.string.isRequired,
+  isDrawerOpen: React.PropTypes.boolean.isRequired,
 };
 
 export default Drawer;
