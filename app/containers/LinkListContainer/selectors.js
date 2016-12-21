@@ -32,7 +32,7 @@ const selectLinkListContainer = () => createSelector(
   selectLinkListContainerDomain(),
   selectTopic(),
   (substate, topic) =>
-    Object.assign(substate.toJS(), { routeTopicName: topic.name })
+    Object.assign(substate.toJS(), { topicName: topic.name })
 );
 
 export default selectLinkListContainer;
