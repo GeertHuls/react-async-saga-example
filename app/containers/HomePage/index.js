@@ -11,15 +11,25 @@
 
 import React from 'react';
 import NavigationContainer from '../../containers/NavigationContainer';
-import LinkListContainer from '../../containers/LinkListContainer';
+
+// the this.props.children will be provided by the react-router
+
+// use terminal to generate new route:
+// > npm run generate route
+
+// to generate a new component, run:
+// > npm run generate component
 
 export default class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
+  static propTypes = {
+    children: React.PropTypes.element,
+  }
 
   render() {
     return (
       <div>
         <NavigationContainer />
-        <LinkListContainer />
+        {this.props.children}
       </div>
     );
   }
