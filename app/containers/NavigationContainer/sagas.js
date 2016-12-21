@@ -3,6 +3,7 @@ import { REQUEST_TOPICS, SELECT_TOPIC } from './constants';
 import { takeLatest } from 'redux-saga';
 import { call, put } from 'redux-saga/effects';
 import { requestTopicsSucceeded, requestTopicsFailed } from './actions';
+import { push } from 'react-router-redux';
 
 export function fetchTopicsFromServer() {
   return fetch('http://localhost:3000/api/topics')
@@ -23,7 +24,7 @@ function* fetchTopics() {
 function* pushTopic(action) {
   // in here we will write logic to change the url
   // for the relevant topic.
-  console.log(action);
+  yield put(push(`/topics/${action.topic.name}`));
 }
 
 export function* pushTopicSaga() {
