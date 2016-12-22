@@ -44,3 +44,10 @@
     font-weight: 700;
   }
 }
+
+.errorMessage {
+  color: #ce1313;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 14px;
+}
