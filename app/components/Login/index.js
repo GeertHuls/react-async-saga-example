@@ -14,6 +14,7 @@ class Login extends React.Component { // eslint-disable-line react/prefer-statel
 
   static propTypes = {
     login: React.PropTypes.func.isRequired,
+    cancelLogin: React.PropTypes.func.isRequired,
   }
 
   state = {};
@@ -62,6 +63,7 @@ class Login extends React.Component { // eslint-disable-line react/prefer-statel
 
         <div
           className={styles.actionContainer}
+          onClick={this.props.cancelLogin}
         >
           <div
             className={styles.button}
