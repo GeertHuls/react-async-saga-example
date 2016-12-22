@@ -24,6 +24,20 @@ class Login extends React.Component { // eslint-disable-line react/prefer-statel
           ref={(f) => { this.emailField = f; }}
           type="text"
         />
+        <div
+          className={styles.actionContainer}
+        >
+          <div
+            className={styles.button}
+          >
+            cancel
+          </div>
+          <div
+            className={styles.button}
+          >
+            log in
+          </div>
+        </div>
       </div>
     );
   }
