@@ -20,6 +20,9 @@ import NavigationContainer from '../../containers/NavigationContainer';
 // to generate a new component, run:
 // > npm run generate component
 
+// to generate a new container , run:
+// > npm run generate container
+
 export default class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
   static propTypes = {
     children: React.PropTypes.element,
