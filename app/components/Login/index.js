@@ -63,10 +63,10 @@ class Login extends React.Component { // eslint-disable-line react/prefer-statel
 
         <div
           className={styles.actionContainer}
-          onClick={this.props.cancelLogin}
         >
           <div
             className={styles.button}
+            onClick={this.props.cancelLogin}
           >
             cancel
           </div>
