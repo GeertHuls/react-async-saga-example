@@ -38,7 +38,7 @@ Navigation.propTypes = {
   ).isRequired,
   selectTopic: React.PropTypes.func.isRequired,
   isDrawerOpen: React.PropTypes.bool.isRequired,
-  email: React.PropTypes.string.isRequired,
+  email: React.PropTypes.string,
 };
 
 export default Navigation;

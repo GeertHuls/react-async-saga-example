@@ -40,7 +40,7 @@ function AppBar({ toggleDrawer, email }) {
 
 AppBar.propTypes = {
   toggleDrawer: React.PropTypes.func.isRequired,
-  email: React.PropTypes.string.isRequired,
+  email: React.PropTypes.string,
 };
 
 export default AppBar;
