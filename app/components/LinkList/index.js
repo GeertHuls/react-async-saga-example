@@ -23,6 +23,8 @@ function LinkList({ links, topicName, children }) {
 
       <IconButton
         icon="plus"
+        buttonClass={styles.button}
+        iconClass={styles.icon}
       />
       {children}
     </div>
