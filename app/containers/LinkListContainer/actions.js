@@ -8,7 +8,15 @@ import {
   REQUEST_LINKS,
   REQUEST_LINKS_SUCCEEDED,
   REQUEST_LINKS_FAILED,
+  START_ADD,
 } from './constants';
+
+export function startAdd(topicName) {
+  return {
+    type: START_ADD,
+    topicName,
+  };
+}
 
 export function requestLinks(topicName) {
   return {
