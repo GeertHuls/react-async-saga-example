@@ -10,7 +10,36 @@ import styles from './styles.css';
 import TextInput from '../TextInput';
 
 class LinkForm extends React.Component { // eslint-disable-line react/prefer-stateless-function
-  state = {};
+  // state validation errors:
+  state = {
+    urlError: '',
+    descriptionError: '',
+  };
+
+  onAdd = () => {
+    const url = this.url.value();
+    const description = this.description.value();
+
+    let urlError = null;
+    let descriptionError = null;
+
+    if (!url.match(/[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/)) {
+      urlError = 'Please provide a valid URL';
+    }
+
+    if (!description) {
+      descriptionError = 'Please provide a valid description';
+    }
+
+    this.setState({
+      urlError,
+      descriptionError,
+    });
+
+    if (urlError || descriptionError) {
+      return;
+    }
+  };
 
   render() {
     return (
@@ -25,11 +54,15 @@ class LinkForm extends React.Component { // eslint-disable-line react/prefer-sta
           <TextInput
             className={styles.input}
             placeholder="URL"
+            errorText={this.state.urlError}
+            ref={(f) => (this.url = f)}
           />
 
           <TextInput
             className={styles.input}
             placeholder="Description"
+            errorText={this.state.descriptionError}
+            ref={(f) => (this.description = f)}
           />
 
           <div
@@ -42,9 +75,9 @@ class LinkForm extends React.Component { // eslint-disable-line react/prefer-sta
             </div>
             <div
               className={styles.button}
-              onClick={this.login}
+              onClick={this.onAdd}
             >
-              log in
+              Add
             </div>
           </div>
         </div>
