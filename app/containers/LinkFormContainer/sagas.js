@@ -1,14 +1,18 @@
 // import { take, call, put, select } from 'redux-saga/effects';
 import { ADD_LINK } from './constants';
 import { takeLatest } from 'redux-saga';
-import { call } from 'redux-saga/effects';
+import { call, put } from 'redux-saga/effects';
+import { addLinkSuccess, addLinkFailed } from './actions';
 import { createLink } from '../../api';
-
+import { goBack } from 'react-router-redux';
 
 function* addLink(action) {
   try {
-    yield call(createLink, action.link);
+    const serverLink = yield call(createLink, action.link);
+    yield put(addLinkSuccess(serverLink));
+    yield put(goBack());
   } catch (e) {
+    yield put(addLinkFailed(action.link, e.message));
   }
 }
 
