@@ -10,6 +10,10 @@ import styles from './styles.css';
 import TextInput from '../TextInput';
 
 class LinkForm extends React.Component { // eslint-disable-line react/prefer-stateless-function
+  static propTypes = {
+    addLink: React.PropTypes.func.isRequired,
+  }
+
   // state validation errors:
   state = {
     urlError: '',
@@ -39,6 +43,11 @@ class LinkForm extends React.Component { // eslint-disable-line react/prefer-sta
     if (urlError || descriptionError) {
       return;
     }
+
+    this.props.addLink({
+      url,
+      description,
+    });
   };
 
   render() {
